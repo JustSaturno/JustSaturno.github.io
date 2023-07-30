@@ -209,6 +209,7 @@ main {
 .presentation {
     width: 100vw;
     position: fixed;
+    display: flex;
     margin-left: 5rem;
     margin-top: 30vh;
 }
@@ -232,10 +233,9 @@ main {
 }
 
 .container {
-    position: absolute;
     overflow: hidden;
+    position: relative;
     top: -10rem;
-    right: 10rem;
     border-radius: 100%;
 
     
