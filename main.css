@@ -203,14 +203,13 @@ main {
 
 #home {
     height: 95vh;
-    position: relative;
+    position: absolute;
 }
 
 .presentation {
-    position: absolute;
+    position: fixed;
     margin-left: 5rem;
     margin-top: 30vh;
-    
 }
 
 .presentation h3 {
@@ -222,7 +221,9 @@ main {
 
 .presentation .name {
     font-size: 74px;
+    width: 48vw;
     text-transform: uppercase;
+    transform: translateX(-4px);
 
     background: -webkit-linear-gradient(right, var(--purple) 1%, var(--font-color-tertiary) 100%);
     -webkit-background-clip: text;
@@ -319,9 +320,9 @@ button img {
 /* Arrow */
 
 .arrow {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+    position: fixed;
+    bottom: 3rem;
+    left: 50vw;
 
     transition: all 0.3s ease-out;
 }
@@ -334,12 +335,17 @@ button img {
 
 #about {
     background-color: var(--background-primary);
+    position: relative;
+    top: 100vh;
     height: 100vh;
 }
 
 /* Section Skills */
 
 #skills {
+    background-color: var(--background-secondary);
+    position: relative;
+    top: 100vh;
     height: 100vh;
 }
 
@@ -347,6 +353,8 @@ button img {
 
 #projects {
     background-color: var(--background-primary);
+    top: 100vh;
+    position: relative;
     height: 100vh;
 }
 
