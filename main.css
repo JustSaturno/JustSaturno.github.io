@@ -207,6 +207,7 @@ main {
 }
 
 .presentation {
+    width: 100vw;
     position: fixed;
     margin-left: 5rem;
     margin-top: 30vh;
@@ -234,9 +235,7 @@ main {
     position: absolute;
     overflow: hidden;
     top: -10rem;
-    left: 100%;
-    width: 70%;
-    margin: 100px;
+    right: 10rem;
     border-radius: 100%;
 
     
@@ -246,8 +245,6 @@ main {
 .container img {
     max-width: 100%;
     display: flex;
-    z-index: 1;
-
     user-select: none;
 }
 
