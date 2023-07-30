@@ -210,8 +210,10 @@ main {
     width: 100vw;
     position: fixed;
     display: flex;
+    align-items: center;
+    
     margin-left: 5rem;
-    margin-top: 30vh;
+    margin-top: 20vh;
 }
 
 .presentation h3 {
@@ -235,7 +237,6 @@ main {
 .container {
     overflow: hidden;
     position: relative;
-    top: -10rem;
     border-radius: 100%;
 
     
@@ -363,4 +364,4 @@ footer {
     background-color: var(--background-secondary);
 }
 
-/* ATUALIZADO 1.0 */
+/* Atualizado 30/07/2023 */
