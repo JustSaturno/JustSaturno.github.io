@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url(//db.onlinewebfonts.com/c/eed8e04cdfd9f975fa0117715f24756e?family=BankSansCapsEFEL-Bol);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --purple: #490988;
+    --blue: #10D7E2;
+    --background-primary: #121212;
+    --background-secondary: #151515;
+    --font-color-primary: #FFFFFF;
+    --font-color-secondary: #C4C4C4;
+    --font-color-tertiary: #00D2DF;
+
+    --font-fam-primary: 'BankSansCapsEFEL-Bol', sans-serif;
+    --font-fam-secundary: 'Oswald', sans-serif;
+    --font-fam-signature: 'Alumni Sans Pinstripe';
+}
+
+h1,
+h2,
+h3 {
+    color: var(--font-color-primary);
+}
+
+body {
+    background-color: var(--background-secondary);
+    font-family: 'Inter', arial, helvetica, sans-serif;
+    overflow-x: none;
+
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Entry Animation */
+
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(15px);
+
+    transition: all 1.5s ease-in;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0%);
+}
+
+.fade {
+    transition: 1.5s;
+}
+
+.presentation-name .fade:nth-child(1) {
+    transition: all 1s;
+}
+
+.presentation-name .fade:nth-child(2) {
+    transition: all 1.5s;
+}
+
+.presentation-name .fade:nth-child(3) {
+    transition: all 2s;
+}
+
+.buttons .fade:nth-child(1) {
+    transition: 2.4s;
+}
+
+.buttons .fade:nth-child(2) {
+    transition: 2.6s;
+}
+
+.buttons .fade:nth-child(3) {
+    transition: 2.8s;
+}
+
+.buttons .fade:nth-child(4) {
+    transition: 2.7s;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navigation {
+    top: 0;
+    text-transform: uppercase;
+    height: 4rem;
+    background-color: var(--background-primary);
+
+    font-family: var(--font-fam-secundary);
+}
+
+.navigation .header-a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    cursor: default;
+    user-select: none;
+}
+
+.navigation .header-a h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: 55px;
+
+    color: var(--blue);
+}
+
+.navigation ul {
+    display: flex;
+
+    list-style: none;
+
+    gap: 30px;
+    margin-right: 55px;
+
+    color: var(--font-color-primary);
+    font-size: 1.2rem;
+}
+
+/* Hover nav links */
+
+.fancy-link {
+    text-decoration: none;
+    color: var(--font-color-secondary);
+    position: relative;
+    user-select: none;
+}
+
+.fancy-link:after {
+    color: var(--font-color-primary);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+
+    transition: transform 0.3s ease-in;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.fancy-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.active::after {
+    transform: scaleX(1);
+}
+
+/* content-bar */
+
+.content-bar {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .04rem;
+    box-shadow: 0px -1.40127px 1.40127px var(--blue);
+}
+
+/* Main */
+
+main {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+/* Section home */
+
+#home {
+    height: 95vh;
+    position: relative;
+}
+
+.presentation {
+    position: absolute;
+    margin-left: 5rem;
+    margin-top: 30vh;
+    
+}
+
+.presentation h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+
+    color: var(--font-color-primary);
+}
+
+.presentation .name {
+    font-size: 74px;
+    text-transform: uppercase;
+
+    background: -webkit-linear-gradient(right, var(--purple) 1%, var(--font-color-tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    position: absolute;
+    overflow: hidden;
+    top: -10rem;
+    left: 100%;
+    width: 70%;
+    margin: 100px;
+    border-radius: 100%;
+
+    
+    display: flex;
+    justify-content: space-between;
+}
+.container img {
+    max-width: 100%;
+    display: flex;
+    z-index: 1;
+
+    user-select: none;
+}
+
+/* Buttons */
+
+.buttons {
+    display: grid;
+    gap: 25px;
+    margin-top: 25px;
+    grid-template-columns: 165px 0px;
+}
+
+.buttons a {
+    text-decoration: none;
+    width: 170px;
+    height: 70px;
+}
+
+button {
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    color: var(--font-color-secondary);
+
+    width: 170px;
+
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button img {
+    transform: translateX(-10px);
+    filter: invert(100%);
+    width: 25px;
+    margin-right: 4px;
+}
+
+.button-sb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 43px;
+    margin-top: 35px;
+}
+
+.button-gd {
+    background-color: transparent;
+    border-top: 2px solid #00D2DF;
+    border-bottom: 3px solid #00D2DF;
+    border-left: 1px solid darkcyan;
+    border-right: 1px solid darkcyan;
+
+    box-shadow: 0px 0px #FFFFFF;
+    
+    transition: all 0.4s;
+    margin-bottom: 25px;
+}
+
+.button-flex {
+    display: flex;
+
+    padding: 20px 45px;
+}
+
+.button-gd:hover {
+    transform: scale(1.05);
+}
+
+/* Arrow */
+
+.arrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transition: all 0.3s ease-out;
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+/* Section About Me */
+
+#about {
+    background-color: var(--background-primary);
+    height: 100vh;
+}
+
+/* Section Skills */
+
+#skills {
+    height: 100vh;
+}
+
+/* Section Projects */
+
+#projects {
+    background-color: var(--background-primary);
+    height: 100vh;
+}
+
+/* Footer */
+
+footer {
+    height: 10rem;
+    width: 100%;
+    background-color: var(--background-secondary);
+}

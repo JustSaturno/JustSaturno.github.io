@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Igor Henrique Gonçalves - Portfólio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    
+    <header>
+        <nav class="navigation">
+            <div class="header-a">
+                <h3>Portfolio</h3>
+                <div class="header-b">
+                    <ul>
+                        <li><a class="fancy-link home active" draggable="false" href="#home">Home</a></li>
+                        <li><a class="fancy-link about" draggable="false" href="#about">About Me</a></li>
+                        <li><a class="fancy-link skills" draggable="false" href="#skills">Skills</a></li>
+                        <li><a class="fancy-link projects" draggable="false" href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <span class="content-bar"></span>
+    </header>
+    
+    <main>
+        <section id="home">
+            <div class="presentation">
+                <div class="presentation-name">
+                    <h3 class="fade hidden">Hi, my name is</h3>
+                    <h1 class="fade name hidden">IGOR HENRIQUE</h1>
+                    <h3 class="fade hidden">Web developer</h3>
+                </div>
+                <div class="container">
+                    <img src="profile_me.png" draggable="false">
+                </div>
+                
+                <div class="buttons">
+                    <a class="fade hidden" href="https://github.com/igorhenriqueg" target="_blank">
+                        <button class="button-flex button-gd" type="button">
+                            <img src="icons8-github.svg">
+                            <p>Github</p>
+                        </button>
+                    </a>
+                    <a class="fade hidden" href="https://www.linkedin.com/in/igor-henrique-6a512b286/" target="_blank">
+                        <button class="button-flex button-gd" type="button">
+                            <img src="icon_linkedin.svg">
+                            <p>Linkedin</p>
+                        </button>
+                    </a>
+                    <a class="fade hidden" href="https://github.com/igorhenriqueg" target="_blank">
+                        <button class="button-flex button-gd" type="button">
+                            <img src="icon_instagram.svg">
+                            <p>Instagram</p>
+                        </button>
+                    </a>
+                    <a class="fade hidden" href="https://twitter.com/SaturnDoV" target="_blank">
+                        <button class="button-flex button-gd" type="button">
+                            <img src="icon_twitter.svg">
+                            <p>Twitter</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="arrow">
+                <a href="#about">
+                    <img src="icon_arrowdown.png">
+                </a>
+            </div>
+            
+        </section>
+        <section id="about"><a href="/page2.html"></a></section>
+        <section id="skills"></section>
+        <section id="projects"></section>
+
+        <footer>
+        </footer>
+    </main> 
+</body>
+
+
+
+
+
+<script>
+    window.addEventListener('scroll', () => {
+        const home = document.querySelector('.home');
+        const about = document.querySelector('.about');
+        const skills = document.querySelector('.skills');
+        const projects = document.querySelector('.projects');
+
+        const scrolled = window.scrollY;
+
+        if(scrolled > 0 && scrolled < 889) {
+            home.classList.add('active');
+
+            about.classList.remove('active');
+            skills.classList.remove('active');
+            projects.classList.remove('active');
+        }
+        if(scrolled > 889 && scrolled < 1827){
+            about.classList.add('active');
+            home.classList.remove('active');
+            skills.classList.remove('active');
+            projects.classList.remove('active');
+        }
+        if(scrolled > 1826 && scrolled < 2763){
+            skills.classList.add('active');
+            home.classList.remove('active');
+            about.classList.remove('active');
+            projects.classList.remove('active');
+        }
+        if(scrolled > 2763){
+            projects.classList.add('active');
+            home.classList.remove('active');
+            about.classList.remove('active');
+            skills.classList.remove('active');
+        }
+    })
+
+</script>
+
+<script src="app.js"></script>
+</html>
