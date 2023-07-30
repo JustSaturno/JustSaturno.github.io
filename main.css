@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url(//db.onlinewebfonts.com/c/eed8e04cdfd9f975fa0117715f24756e?family=BankSansCapsEFEL-Bol);
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500&display=swap');
 
 * {
     margin: 0;
@@ -227,7 +230,6 @@ main {
     font-size: 74px;
     width: 48vw;
     text-transform: uppercase;
-    transform: translateX(-4px);
 
     background: -webkit-linear-gradient(right, var(--purple) 1%, var(--font-color-tertiary) 100%);
     -webkit-background-clip: text;
@@ -336,6 +338,27 @@ button img {
     position: relative;
     top: 100vh;
     height: 100vh;
+}
+
+.about-container {
+    display: flex;
+    position: absolute;
+
+    height: 30vh;
+    width: 90vw;
+
+    margin-top: 55px;
+    margin-left: 5rem;
+    
+    background-color: var(--background-secondary);
+}
+
+.about-container h1 {
+    text-transform: uppercase;
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    margin-top: 2rem;
+    margin-left: 3rem;
 }
 
 /* Section Skills */
