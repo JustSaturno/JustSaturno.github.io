@@ -27,6 +27,7 @@ html {
     --font-fam-primary: 'BankSansCapsEFEL-Bol', sans-serif;
     --font-fam-secundary: 'Oswald', sans-serif;
     --font-fam-signature: 'Alumni Sans Pinstripe';
+    --font-fam-tertiary: 'Teko', sans-serif;
 }
 
 h1,
@@ -102,6 +103,25 @@ body {
 .buttons .fade:nth-child(4) {
     transition: 2.7s;
 }
+
+.hidden2 {
+    opacity: 0;
+    transform: translateY(100%);
+    filter: blur(15px);
+
+    transition: all 0.5s ease-in;
+}
+
+.show2 {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0%);
+}
+
+.hidden2:nth-child(2) {
+    transition: all 0.8s ease-in;
+}
+
 
 /* HEADER */
 
@@ -246,7 +266,7 @@ main {
     justify-content: space-between;
 }
 .container img {
-    max-width: 100%;
+    max-width: 30vw;
     display: flex;
     user-select: none;
 }
@@ -342,6 +362,7 @@ button img {
 
 .about-container {
     display: flex;
+    flex-direction: column;
     position: absolute;
 
     height: 30vh;
@@ -353,12 +374,27 @@ button img {
     background-color: var(--background-secondary);
 }
 
-.about-container h1 {
+.about-info {
     text-transform: uppercase;
-    font-family: 'Teko', sans-serif;
+    font-family: var(--font-fam-tertiary);
+    margin-left: 3rem;
+    width: 50%;
+}
+
+.about-container h1 {
     font-size: 40px;
     margin-top: 2rem;
-    margin-left: 3rem;
+}
+
+.about-container h3 {
+    text-transform: uppercase;
+    font-family: var(--font-fam-signature);
+    font-size: 25px;
+    font-weight: 100;
+}
+
+#about-name {
+    font-weight: 600;
 }
 
 /* Section Skills */
@@ -382,9 +418,10 @@ button img {
 /* Footer */
 
 footer {
-    height: 10rem;
-    width: 100%;
     background-color: var(--background-secondary);
+    top: 100vh;
+    position: relative;
+    height: 10rem;
 }
 
 /* Atualizado 30/07/2023 */
