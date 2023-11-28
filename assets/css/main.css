@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #000;
+    --bg-color2: #1a1a1a;
+    --bg-color3: #ffffff;
+
+    --text-color: #fff;
+    --text-color2: #969696;
+    --text-color3: #000;
+
+    --font-fam-primary: 'Oswald', sans-serif;
+    --font-fam-secondary: 'Bebas Neue', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Global */
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    height: 100vh;
+}
+
+/* Header */
+
+header {
+    position: fixed;
+    top: 25px;
+
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 4vw;
+
+    width: 100vw;
+    font-family: var(--font-fam-secondary);
+    font-size: 1.2rem;
+    color: var(--text-color3);
+    z-index: 101;
+}
+
+.header-bg {
+    width: 90%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+
+    border-radius: 25px;
+    background-color: var(--bg-color3);
+    transition: 1s;
+}
+
+.top {
+    width: 440px;
+}
+
+.header-bg img {
+    width: 45px;
+    height: 45px;
+}
+
+.header-bg ul {
+    display: flex;
+    gap: 20px; 
+}
+
+.header-bg ul li {
+    position: relative;
+}
+
+.header-bg ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--text-color3);
+    transform: translateY(-4px);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 350ms ease-in;
+}
+
+.header-bg ul li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* Home */
+
+@font-face {
+    src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+      format("woff2");
+    font-family: "Meta";
+    font-style: normal;
+    font-weight: normal;
+}
+
+.main-name {
+    font-variation-settings: "wght" 100, "ital" 0;
+    text-align: center;
+    font-family: "Meta", sans-serif;
+    font-size: 7rem;
+    text-shadow: none;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    -webkit-text-stroke: 4px #d6f4f4;
+    user-select: none;
+}
+
+.main-name:hover {
+    color: transparent;
+    font-variation-settings: "wght" 900, "ital" 1;
+    text-shadow: 10px 10px 0px #07bccc,
+      15px 15px 0px #e601c0,
+      20px 20px 0px #e9019a,
+      25px 25px 0px #f40468
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-family: var(--font-fam-primary);
+    font-size: 1.5rem;
+    overflow: hidden;
+    height: 53px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    animation: carousel 20s forwards infinite;
+}
+
+@keyframes carousel {
+    25% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-100%);
+    }
+    75% {
+        transform: translateY(-200%);
+    }
+    90% {
+        transform: translateY(0%);
+    }
+}
+
+/* Home Background */
+
+.main-bg-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bg-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg {
+    position: absolute;
+    inset: 50px;
+    opacity: 50%;
+    inset: 0;
+}
+
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.bg {
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #fff 0%,
+        #fff 7%,
+        transparent 10%,
+        transparent 12%,
+        #fff 16%
+    );
+    --stripesDark: repeating-linear-gradient(
+        100deg,
+        #000 0%,
+        #000 7%,
+        transparent 10%,
+        transparent 12%,
+        #000 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(0px);
+    filter: invert(100%);
+
+    -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .bg {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+.dark .bg::after {
+    background-image: var(--stripesDark), var(--rainbow);
+}
