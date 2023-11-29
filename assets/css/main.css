@@ -22,6 +22,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
 }
 
 ::-webkit-scrollbar {
@@ -46,6 +47,7 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 /* Global */
@@ -61,6 +63,7 @@ ul {
 
 section {
     height: 100vh;
+    /* scroll-snap-align: start; */
 }
 
 /* Header */
@@ -291,14 +294,6 @@ header {
 }
 
 .bg {
-    --stripes: repeating-linear-gradient(
-        100deg,
-        #fff 0%,
-        #fff 7%,
-        transparent 10%,
-        transparent 12%,
-        #fff 16%
-    );
     --stripesDark: repeating-linear-gradient(
         100deg,
         #000 0%,
@@ -315,12 +310,11 @@ header {
         #5eead4 25%,
         #60a5fa 30%
     );
-    background-image: var(--stripes), var(--rainbow);
+    background-image: var(--stripesDark), var(--rainbow);
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
 
-    filter: blur(0px);
-    filter: invert(100%);
+    filter: blur(10px) opacity(50%) saturate(200%);
 
     -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
     mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
@@ -332,17 +326,152 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: var(--stripes), var(--rainbow);
+    background-image: var(--stripesDark), var(--rainbow);
     background-size: 200%, 100%;
     animation: jumbo 60s linear infinite;
     background-attachment: fixed;
     mix-blend-mode: difference;
 }
 
-.dark .bg {
-    background-image: var(--stripesDark), var(--rainbow);
-    filter: blur(10px) opacity(50%) saturate(200%);
+/* Projects */
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+
+    font-family: var(--font-fam-primary);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
-.dark .bg::after {
-    background-image: var(--stripesDark), var(--rainbow);
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Project Cards */
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;  
+    max-width: 916px;
+    width: calc(100% - 20px);
+    height: calc(20% - 20px);
+}
+  
+#cards:hover > .card::after {
+    opacity: 1;
+}
+  
+.card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    height: 375px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+  
+.card:hover::before {
+    opacity: 1;
+}
+  
+.card::before,
+.card::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+  
+.card::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y), 
+      rgba(255, 255, 255, 0.01),
+      transparent 40%
+    );
+    z-index: 3;
+}
+  
+.card::after {  
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y), 
+      rgba(255, 255, 255, 0.05),
+      transparent 40%
+    );
+    z-index: 1;
+}
+  
+.card > .card-content {
+    background-color: rgb(23, 23, 23);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+.card-description {
+    font-family: var(--font-fam-secondary);
+    position: absolute;
+    bottom: 0;
+    border-top: 0px;
+    width: 100%;
+    height: 0%;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover .card-description {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);;
+    height: 35%;
+}
+
+.date {
+    color: var(--text-color2);
+    font-size: 1rem;
+}
+
+.card-title {
+    position: absolute;
+    top: 3px;
+    font-family: var(--font-fam-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    border-radius: inherit;
+    height: 80%;
+    object-fit: cover;
+    width: 90%;
 }
