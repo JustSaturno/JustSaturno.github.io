@@ -20,6 +20,29 @@
     --font-fam-secondary: 'Bebas Neue', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg-color2);
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -55,6 +78,7 @@ header {
     font-size: 1.2rem;
     color: var(--text-color3);
     z-index: 101;
+    user-select: none;
 }
 
 .header-bg {
@@ -89,7 +113,7 @@ header {
     position: relative;
 }
 
-.header-bg ul li::after {
+.header-bg ul li a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -104,13 +128,22 @@ header {
     transition: transform 350ms ease-in;
 }
 
-.header-bg ul li:hover::after {
+.header-bg ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.header-bg ul li a.active::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
 
 /* Home */
+
+#home {
+    user-select: none;
+}
 
 @font-face {
     src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
@@ -129,16 +162,28 @@ header {
     transition: all 0.5s;
     text-transform: uppercase;
     -webkit-text-stroke: 4px #d6f4f4;
-    user-select: none;
+    animation: name-anim 4s ease-out forwards;
 }
 
-.main-name:hover {
+.main-name:hover{
     color: transparent;
     font-variation-settings: "wght" 900, "ital" 1;
     text-shadow: 10px 10px 0px #07bccc,
       15px 15px 0px #e601c0,
       20px 20px 0px #e9019a,
       25px 25px 0px #f40468
+}
+
+@keyframes name-anim {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .carousel-container {
@@ -150,6 +195,7 @@ header {
     font-size: 1.5rem;
     overflow: hidden;
     height: 53px;
+    animation: name-anim 3s ease-out forwards;
 }
 
 .carousel {
@@ -171,6 +217,42 @@ header {
     }
     90% {
         transform: translateY(0%);
+    }
+}
+
+/* Home Arrow */
+
+.arrow-down {
+    position: absolute;
+    bottom: 7vh;
+    font-size: 5rem;
+    rotate: 90deg;
+    animation: arrow 2s ease-in-out infinite;
+    cursor: pointer;
+    color: #d6f4f4;
+    transition: all 1s;
+    filter:saturate(80%);
+}
+
+.arrow-down:hover {
+    font-variation-settings: "wght" 900, "ital" 1;
+    text-shadow: 10px 10px 0px #d6f4f45e;
+        /* 0px 0px 70px #d6f4f4,
+        -5px 0px 70px #07bccc,
+        -10px 0px 70px #e601c0,
+        -15px 0px 70px #e9019a,
+        -20px 0px 70px #f40468; */
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
