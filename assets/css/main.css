@@ -346,6 +346,7 @@ header {
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
+    user-select: none;
 }
 
 .projects-container {
@@ -353,6 +354,14 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+
+.projects-title {
+    position: relative;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    font-family: var(--font-fam-secondary);
 }
 
 /* Project Cards */
@@ -371,7 +380,8 @@ header {
 }
   
 .card {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
     cursor: pointer;
     display: flex;
@@ -417,18 +427,6 @@ header {
       transparent 40%
     );
     z-index: 1;
-}
-  
-.card > .card-content {
-    background-color: rgb(23, 23, 23);
-    border-radius: inherit;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    inset: 1px;
-    padding: 10px;
-    position: absolute;
-    z-index: 2;
 }
 
 .card-description {

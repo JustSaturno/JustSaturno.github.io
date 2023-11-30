@@ -71,25 +71,28 @@ function calculus (item, key) {
             if(screen.innerText != "Error"){
                 if(calcKey == "/") {
                     screen.innerText += "÷";
+                    calc += calcKey
                 }else if(calcKey == "*") {
                     screen.innerText += "*";
+                    calc += calcKey
                 }else if(calcKey == "-") {
                     screen.innerText += "-";
+                    calc += calcKey
                 }else if(calcKey == "+") {
                     screen.innerText += "+";
+                    calc += calcKey
                 }else if(calcKey == "%"){
                     screen.innerText += "%";
+                    calc += calcKey
                 }else if(calcKey == ".") {
                     screen.innerText += "."
+                    calc += calcKey
                 }else if(screen.innerText == "0") {
+                    calc = calcKey 
                     screen.innerText = calcKey
                 }else{
-                    screen.innerText += calcKey;
-                }
-                if(screen.innerText == "0"){
-                    calc = calcKey
-                }else{
                     calc += calcKey
+                    screen.innerText += calcKey;
                 }
             }
         }

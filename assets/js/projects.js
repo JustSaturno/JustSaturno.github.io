@@ -59,6 +59,38 @@ projectsData.forEach((project) => {
         
     })
 
+    div.addEventListener('mousemove', (event) => {
+        let mouseX = event.clientX
+        let mouseY = event.clientY
+
+        let cardX = div.getBoundingClientRect().x
+        let cardY = div.getBoundingClientRect().y
+
+        let cardWidth = div.getBoundingClientRect().width
+        let cardHeight = div.getBoundingClientRect().height
+
+        let cardCenterX = cardX + (cardWidth / 2)
+        let cardCenterY = cardY + (cardHeight / 2)
+
+        let cardCenterXOffset = cardCenterX - mouseX
+        let cardCenterYOffset = cardCenterY - mouseY
+
+        let cardCenterXOffsetPercent = (cardCenterXOffset / cardWidth) * 100
+
+        let cardCenterYOffsetPercent = (cardCenterYOffset / cardHeight) * 100
+
+        div.style.transform = `rotateX(${cardCenterYOffsetPercent * -0.4}deg) rotateY(${cardCenterXOffsetPercent * 0.4}deg)`
+
+        div.style.transition = "all 0.1s ease"
+    })
+
+    div.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+        div.style.transform = `rotateX(0deg) rotateY(0deg)`
+        div.style.transition = "all 1s ease"
+        }, 500)
+    })
+
     if(project.title === "PlaceHolder" || project.description === ""){
         div.innerHTML = `
             <div class="card-title">
