@@ -141,6 +141,10 @@ header {
     transform-origin: left;
 }
 
+.hamburger-button {
+    display: none;
+}
+
 
 /* Home */
 
@@ -651,6 +655,7 @@ footer img:hover {
     }
 
     .hamburger-button {
+        display: block;
         outline: none;
         border: none;
         cursor: pointer;
@@ -719,10 +724,6 @@ footer img:hover {
     .main-name {
         font-size: 5rem;
     }
-
-    /* .carousel-container {
-        font-size: 1rem;
-    } */
 
     .arrow-down {
         font-size: 3rem;
