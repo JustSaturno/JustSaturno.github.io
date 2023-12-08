@@ -17,10 +17,10 @@ const projectsData = [
         link: "",
     },
     {
-        title: "PlaceHolder",
-        image: "assets/img/PH.png",
-        description: "",
-        date: "",
+        title: "Game Store",
+        image: "assets/img/projects/MAG.png",
+        description: "A simple game store using HTML, CSS & JS.",
+        date: "Created on 11/01/2023.<br>Last updated on --/--/2023.",
         link: "",
     },
     {
