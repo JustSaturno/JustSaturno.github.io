@@ -93,7 +93,7 @@ projectsData.forEach((project) => {
 
     if(project.title === "PlaceHolder" || project.description === ""){
         div.innerHTML = `
-            <div class="card-title">
+            <div class="card-title"">
                 <h2>${project.title}</h2>
             </div>
             <div class="card-image" style="filter: invert(100%)">

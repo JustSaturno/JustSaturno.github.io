@@ -11,13 +11,55 @@
     <header>
         <div class="header-bg">
             <img src="assets/img/logoicon2.svg" draggable="false">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <nav>
+                <ul class="nav-ul">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button
+                    onclick="hamburger()"
+                    class="hamburger-button"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false"
+                    >
+                    <svg
+                    fill="var(--button-color)"
+                    class="hamburger"
+                    viewBox="0 0 100 100"
+                    width="30"
+                    height="30"
+                    >
+                    <rect
+                        class="line top"
+                        width="80"
+                        height="8"
+                        x="10"
+                        y="25"
+                        rx="4"
+                    />
+                    <rect
+                        class="line middle"
+                        width="80"
+                        height="8"
+                        x="10"
+                        y="50"
+                        rx="4"
+                    />
+                    <rect
+                        class="line bottom"
+                        width="80"
+                        height="8"
+                        x="10"
+                        y="75"
+                        rx="4"
+                    />
+                    </svg>
+                </button>
+            </nav>
+            
         </div>
     </header>
     <main>

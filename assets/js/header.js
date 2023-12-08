@@ -23,3 +23,19 @@ window.onscroll = () => {
         }
     }
 )}
+
+function hamburger() {
+    const isOpened = document.querySelector('.hamburger-button').getAttribute('aria-expanded')
+    if(isOpened === "false"){
+        document.querySelector('.hamburger-button').setAttribute('aria-expanded', true)
+        document.querySelector('.header-bg nav ul').classList.toggle('active-ul')
+        document.querySelector('.header-bg').classList.toggle('header-bg-active')
+    }else{
+        document.querySelector('.hamburger-button').setAttribute('aria-expanded', false)
+        document.querySelector('.header-bg nav ul').classList.toggle('active-ul')
+        setTimeout(() => {
+            document.querySelector('.header-bg').classList.toggle('header-bg-active')
+        }, 750);
+        
+    }
+}
