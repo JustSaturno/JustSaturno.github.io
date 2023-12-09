@@ -4,14 +4,14 @@ const cardContainer = document.querySelector('.card-container')
 const projectsData = [
     {
         title: "Calculator",
-        image: "assets/img/projects/calculator.png",
+        image: "assets/img/projects/Calculator.png",
         description: "A simple functional calculator.",
         date: "Created on 11/17/2023.<br>Last updated on 11/17/2023.",
         link: "assets/projects/calculator/index.html",
     },
     {
         title: "Wavetapper",
-        image: "assets/img/projects/wavetapper.png",
+        image: "assets/img/projects/Wavetapper.png",
         description: "A synchronized music animation using CSS & JS.",
         date: "Created on 11/17/2023.<br>Last updated on 11/29/2023.",
         link: "",
@@ -21,7 +21,7 @@ const projectsData = [
         image: "assets/img/projects/MAG.png",
         description: "A simple game store using HTML, CSS & JS.",
         date: "Created on 11/01/2023.<br>Last updated on --/--/2023.",
-        link: "",
+        link: "assets/projects/Loja/app/index.html",
     },
     {
         title: "PlaceHolder",

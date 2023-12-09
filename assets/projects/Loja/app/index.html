@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel='shortcut icon' type='image/x-icon' href='../assets/logo_2.png'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <title>MAG</title>
+</head>
+<body>
+
+    <div class="mobile-warning">
+        <p>This project does not support mobile devices</p>
+        <br>
+        <p>Este projeto não suporta dispositivos mobile</p>
+    </div>
+
+    <div class="login-animation">
+        <div class="login-animation-bg">
+            <h1 id="login-animation-text"></h1>
+        </div> 
+    </div>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 10px">
+            <img src="../assets/logo.png" id="logo">
+            <p class="username" id="username"></p>
+        </div>
+        
+        <nav>
+            <label class="file-upload" id="file-upload">
+                <input type="file" id="file"/>
+                Enviar Arquivo
+            </label>
+            <div class="buttons hidden">
+                <button id="login">Login</button>
+                <p>|</p>
+                <button id="register">Register</button>
+            </div>
+            <div class="user hidden">
+                <label class="file-upload" id="file-download">
+                    Salvar Arquivo
+                </label>
+                <p class="user-bar">|</p>
+                <button class="purchase-list hidden" id="purchase-list"><p>Lista de Vendas</p></button>
+                <p class="user-bar">|</p>
+                <button class="logout" id="logout"><p>Logout</p></button>
+                <p class="user-bar">|</p>
+                <i class="bi bi-bag bag" id="bag"><div class="wishlist-itens-number hidden"></div></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="lr login hidden">
+        <div class="login-passwords">
+            <form id="login-form">
+                <label for="email">Email</label>
+                <input type="text" id="email" required>
+                <label for="password">Senha</label>
+                <div class="password">
+                    <input type="password" id="password" required>
+                    <img src="../assets/view.png" class="eye">
+                </div>
+                <p id="error-login" style="color: red; font-size: 12px"></p>
+                <button type="submit">Login</button>
+            </form>
+            <div class="logins-view">
+                <p id="login-arrow" class="arrow">&#10151;</p>
+                <div>
+                    <div>
+                        <p>Admin:</p>
+                        <p>Igor@mag.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+                <div>
+                    <div>
+                        <p>Supervisor:</p>
+                        <p>Carlos@mag.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+                <div>
+                    <div>
+                        <p>Supervisor:</p>
+                        <p>vinicius@mag.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+                <div>
+                    <div>
+                        <p>User:</p>
+                        <p>Jack@js.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="lr register hidden">
+        <form id="register-form">
+            <label for="username-register">Usuário</label>
+            <input type="text" id="username-register" name="username" required>
+
+            <label for="email-register">Email</label>
+            <input type="email" id="email-register" name="email" required>
+
+            <label for="password">Senha</label>
+            <div class="password">
+                <input type="password" id="password-register" name="password" required>
+                <img src="../assets/view.png" class="eye">
+            </div>
+
+            <label for="password-confirm">Confirmar Senha</label>
+            <div class="password">
+                <input type="password" id="password-confirm" required>
+                <img src="../assets/view.png" class="eye">
+            </div>
+
+            <p id="error-register" style="color: red; font-size: 12px"></p>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <main>
+        <div class="edit-prompt hidden">
+            <form id="edit-form">
+                <div>
+                    <label for="edit-name">Produto</label>
+                    <input type="text" id="edit-name">
+                </div>
+                
+                <div>
+                    <label for="edit-description">Descrição</label>
+                    <input type="text" id="edit-description">
+                </div>
+                
+                <div>
+                    <label for="edit-price">Preço (R$)</label>
+                    <input type="text" id="edit-price">
+                </div>
+
+                <div>
+                    <label for="edit-discount">Desconto (%)</label>
+                    <input type="number" id="edit-discount" min="0" max="100">
+                </div>
+
+                <div>
+                    <label for="edit-stars">Estrelas (0-5)</label>
+                    <input type="number" id="edit-stars" min="0" max="5">
+                </div>
+                
+                <div>
+                    <label for="edit-stock">Estoque</label>
+                    <input type="number" id="edit-stock" min="0">
+                </div>
+
+                <div class="btn-form">
+                    <button id="save-edit" type="submit">Salvar</button>
+                    <button id="cancel-edit" type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="add-btn-menu hidden">
+            <button id="add-btn"><i class="bi bi-plus-square-fill"></i></button>
+        </div>
+
+        <div class="add-prompt hidden">
+            <form id="add-form">
+                <div>
+                    <label for="add-name">Produto</label>
+                    <input type="text" id="add-name">
+                </div>
+
+                <div>
+                    <label for="none">Tipo</label>
+                    <div class="radio-selector">
+                        <input type="radio" id="game-selector" name="add-type" value="jogo">
+                        <label for="game-selector">Jogo</label>
+
+                        <input type="radio" id="console-selector" name="add-type" value="console">
+                        <label for="console-selector">Console</label>
+
+                        <input type="radio" id="accessory-selector" name="add-type" value="acessorio">
+                        <label for="accessory-selector">Acessório</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="add-description">Descrição</label>
+                    <input type="text" id="add-description">
+                </div>
+
+                <div>
+                    <label for="add-image-one">Primeira imagem (URL)</label>
+                    <input type="text" id="add-image-one">
+                </div>
+
+                <div>
+                    <label for="add-image-two">Segunda Imagem (URL) (Somente para jogos)</label>
+                    <input type="text" id="add-image-two">
+                </div>
+                
+                <div>
+                    <label for="add-price">Preço (R$)</label>
+                    <input type="text" id="add-price">
+                </div>
+
+                <div>
+                    <label for="add-discount">Desconto (%)</label>
+                    <input type="number" id="add-discount" min="0" max="100">
+                </div>
+
+                <div>
+                    <label for="add-stars">Estrelas (0-5)</label>
+                    <input type="number" id="add-stars" min="0" max="5">
+                </div>
+                
+                <div>
+                    <label for="add-stock">Estoque</label>
+                    <input type="number" id="add-stock" min="0">
+                </div>
+
+                <div class="btn-form">
+                    <button id="save-add" type="submit">Salvar</button>
+                    <button id="cancel-add" type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="purchased-container hidden">
+            <div class="purchased-list-container">
+                <div class="purchased-list">
+                    <div class="purchased-list-header">
+                        <p>Data</p>
+                        <p>Usuário</p>
+                        <p>Produtos</p>
+                        <p>Id</p>
+                        <p>More/Delete</p>
+                    </div>
+
+                    <div class="purchased-list-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wishlist">
+            <div class="wishlist-item-container">
+
+            </div>
+            <div class="wishlist-buy">
+                <p class="wishlist-total">Total: R$<span>0,00</span></p>
+                <div class="buy-total-btn">
+                    <button id="buyBtn">Comprar</button>
+                    <div>
+                        <div class="wishlist-text hidden">
+                            <p>Limpar</p>
+                            <div class="arrow-down"></div>
+                        </div>
+                        <i class="bi bi-recycle"></i>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="text-container">
+            <h1>Trabalhando com dados locais</h1>
+            <p>Sistema de exemplo para aulas de Web Design, com HTML, CSS e JavaScript</p>
+            <p>Para executar o sistema faça upload do arquivo JSON com dados iniciais de teste, seguindo o modelo a seguir: <a download="dados.json" href="../bd/dados.json">Dados.json</a></p>
+            <p>Faça o download do arquivo JSON com os dados de teste e carregue-o para o sistema clicando em <b>Enviar Arquivo</b></p>
+        </div>
+        
+
+        <div class="container hidden">
+            <div class="banner">
+                <div class="banner-text">
+                    <img src="../assets/logo_2.png" draggable="false">
+                    <p>Jogos, Consoles e Acessórios</p>
+                </div>
+                <img src="../assets/banner.jpg" alt="" draggable="false">
+            </div>
+
+            <div class="filter">
+                <div class="dropdown">
+                    <p><span>Todos</span></p>
+                    <div class="dropdown-content">
+                        <p><i class="bi bi-fire">Desconto</i></p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p><span>Consoles</span></p>
+                    <div class="dropdown-content">
+                        <p><i class="bi bi-playstation">PlayStation</i></p>
+                        <p><i class="bi bi-xbox">Xbox</i></p>
+                        <p><i class="bi bi-nintendo-switch">Nintendo</i></p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p><span>Jogos</span></p>
+                    <div class="dropdown-content">
+                        <p class="games"><i class="bi bi-playstation">PlayStation</i></p>
+                        <p class="games"><i class="bi bi-xbox">Xbox</i></p>
+                        <p class="games"><i class="bi bi-nintendo-switch">Nintendo</i></p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p><span>Acessórios</span></p>
+                    <div class="dropdown-content">
+                        <p><i class="bi bi-dpad-fill">Controles</i></p>
+                        <p><i class="bi bi-headset">Headset</i></p>
+                        <p><i class="bi bi-mic-fill">Microfone</i></p>
+                        <p><i class="bi bi-mouse-fill">Mouse</i></p>
+                        <p><i class="bi bi-keyboard-fill">Teclado</i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+            
+            </div>
+        </div>
+    </main>
+
+    <footer style="position: absolute; bottom: 0; width: 100%;">
+        <div class="signature">
+            <p>Desenvolvido por:</p>
+            <div class="names">
+                <div class="row">
+                    <p><a href="https://github.com/CarlosAugustoRodrigues" target="_blank">Carlos Augusto</a></p>
+                    <p><a href="https://github.com/IgorHenriqueG" target="_blank">Igor Henrique</a></p>
+                </div>
+                <div class="row">
+                    <p><a href="https://github.com/Vinimanzano" target="_blank">Vinícius Manzano</a></p>
+                    <p>Jaqueline Rodrigues</p>
+                </div>
+            </div>
+        </div>
+        <p>MAG © 2023. Todos os direitos reservados.</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+<script src="secundary.js"></script>
+<script src="tertiary.js"></script>
+<script src="quaternary.js"></script>
+</html>
