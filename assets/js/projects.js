@@ -7,7 +7,7 @@ const projectsData = [
         image: "assets/img/projects/Calculator.png",
         description: "A simple functional calculator.",
         date: "Created on 11/17/2023.<br>Last updated on 11/17/2023.",
-        link: "assets/projects/calculator/index.html",
+        link: "assets/projects/Calculator/index.html",
     },
     {
         title: "Wavetapper",
