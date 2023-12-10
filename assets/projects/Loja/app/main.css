@@ -1117,6 +1117,7 @@ main {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-family: var(--ff-tertiary);
+    z-index: 101;
 }
 
 
@@ -1237,7 +1238,14 @@ main {
     user-select: none;
 }
 
-
+.purchased-item-more-item{
+    position: relative;
+}
+.purchased-item-quantity {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
 
 .purchased-item-total {
     display: flex;

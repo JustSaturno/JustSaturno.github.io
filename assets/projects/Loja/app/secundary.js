@@ -7,13 +7,30 @@ const wishlistModel = document.querySelector('.wishlist-item-container')
 const wishlistRecicleBtn = document.querySelector('.bi-recycle')
 const buyBtn = document.querySelector('#buyBtn')
 const fileDownload = document.querySelector('#file-download')
+const purchasedContainer = document.querySelector('.purchased-container')
 const purchaseList = document.querySelector('#purchase-list')
+const purchasedListContainer = document.querySelector('.purchased-list-container')
+
+purchasedListContainer.addEventListener('mouseover', () => {
+    purchasedListContainer.classList.add('active')
+})
+
+purchasedListContainer.addEventListener('mouseout', () => {
+    purchasedListContainer.classList.remove('active')
+})
+
+purchasedContainer.onclick = () => {
+    console.log('oi')
+    if(!purchasedListContainer.classList.contains('active')) {
+        purchasedContainer.classList.add('hidden')
+    }
+}
 
 purchaseList.onclick = () => {
-    if(document.querySelector('.purchased-container').classList.contains('hidden')) {
-        document.querySelector('.purchased-container').classList.remove('hidden')
+    if(purchasedContainer.classList.contains('hidden')) {
+        purchasedContainer.classList.remove('hidden')
     } else {
-        document.querySelector('.purchased-container').classList.add('hidden')
+        purchasedContainer.classList.add('hidden')
     }
 }
 
@@ -35,7 +52,7 @@ fileDownload.onclick = () => {
 
 function loadPurchase(){
     if(dados.vendas.length == 0) {
-        document.querySelector('.purchased-container').classList.add('hidden')
+        purchasedContainer.classList.add('hidden')
     }else{
         purchaseListLoad()
     }
@@ -50,7 +67,7 @@ buyBtn.onclick = () => {
             return
         }else {
             const date = new Date()
-            let data = date.toLocaleTimeString('pt-BR') + " - " + date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()
+            let data = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
             let usuario = user
             let totalBuy = 0
             let wishlistItemPurchased = ''
@@ -71,7 +88,7 @@ buyBtn.onclick = () => {
                 wishlistItemPurchased +=  `
                 <div class="purchased-item-more-item">
                     <p>${item.name}</p>
-                    <p>${item.quantity}</p>
+                    <p class="purchased-item-quantity">${item.quantity}</p>
                     <p>R$${(item.price * item.quantity).toFixed(2)}</p>
                 </div>`
             })
@@ -156,14 +173,15 @@ function showMore() {
     
     purchasedItemDelete.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            console.log(e.target.parentElement.parentElement.parentElement.getAttribute('item-id'))
-            const id = Number(e.target.parentElement.parentElement.parentElement.getAttribute('item-id'))
-            dados.vendas.forEach((item, index) => {
-                if(item.id == id) {
-                    dados.vendas.splice(index, 1)
-                    purchaseListLoad()
-                }
-            }) 
+            if(confirm('Tem certeza que deseja deletar este item?') == true) {
+                const id = Number(e.target.parentElement.parentElement.parentElement.getAttribute('item-id'))
+                dados.vendas.forEach((item, index) => {
+                    if(item.id == id) {
+                        dados.vendas.splice(index, 1)
+                        purchaseListLoad()
+                    }
+                })
+            }
         })
     })
 }
