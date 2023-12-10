@@ -5,9 +5,9 @@ window.onscroll = () => {
 
     var fixed = 0;
     if (window.scrollY > fixed) {
-        header.classList.add("top");
+        header.classList.add("top-header");
     } else {
-        header.classList.remove("top");
+        header.classList.remove("top-header");
     }
 
     sections.forEach((section) => {

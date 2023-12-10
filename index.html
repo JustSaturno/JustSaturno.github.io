@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
     <link rel="icon" type="image/x-icon" href="assets/img/logoIcon1.svg">
     <title>Igor Henrique - Portfolio</title>
 </head>
 <body>
+
+    <div class="loader-main" id="loader">
+        <div class="loader">
+            <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+      </div>
+
     <header>
         <div class="header-bg">
             <img src="assets/img/logoicon2.svg" draggable="false">
@@ -134,15 +144,15 @@
                     <div class="skills">
                         <div class="skill">
                             <img src="assets/img/html.png" draggable="false">
-                            <p>HTML</p>
+                            <p>HTML<span> - Intermediate</span></p>
                         </div>
                         <div class="skill">
                             <img src="assets/img/css.png" draggable="false">
-                            <p>CSS</p>
+                            <p>CSS <span> - Intermediate</span></p>
                         </div>
                         <div class="skill">
                             <img src="assets/img/js.png" draggable="false">
-                            <p>JavaScript</p>
+                            <p>JavaScript <span> - Beginner</span></p>
                         </div>
                     </div>
                 </div>
@@ -152,12 +162,12 @@
         <footer>
             <div class="footer-container">
                 <div class="footer-content">
-                    <p class="social-icons">
+                    <div class="social-icons">
                         <a href="https://github.com/IgorHenriqueG" target="_blank"><img src="assets/img/github.png" draggable="false"></a>
                         <a href="#" target="_blank"><img src="assets/img/linkedin.png" draggable="false" style="filter: invert(80%);"></a>
                         <a href="#" target="_blank"><img src="assets/img/instagram.png" draggable="false" style="filter: invert(80%);"></a>
                         <a href="#" target="_blank"><img src="assets/img/twitter.png" draggable="false" style="filter: invert(80%);"></a>
-                    </p>
+                    </div>
                 </div>
                 <div class="footer-text">
                     <p>Copyright © 2022 Igor Henrique. All rights reserved.</p>
@@ -173,4 +183,23 @@
 </body>
 <script src="assets/js/header.js"></script>
 <script src="assets/js/projects.js"></script>
+
+<script>
+    document.onreadystatechange = function() {
+      if (document.readyState === "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        document.querySelector("body").style.overflow = "hidden";
+        document.querySelector("#loader").style.visibility = "visible";
+      } else {
+        setTimeout(() => {
+          document.querySelector("#loader").classList.add('fadeOut');  
+          setTimeout(() => {
+            document.querySelector("#loader").style.display = "none";
+          }, 800);
+          document.querySelector("body").style.visibility = "visible";
+          document.querySelector("body").style.overflowY = "visible";
+        }, 3000);
+      }
+    };
+  </script>  
 </html>

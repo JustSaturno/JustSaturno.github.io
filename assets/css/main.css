@@ -68,6 +68,10 @@ section {
 
 /* Header */
 
+.nav-ul li:nth-child(5) a{ /* Remove after "contato" is ready */ 
+    cursor: not-allowed !important;
+}
+
 header {
     position: fixed;
     top: 25px;
@@ -98,8 +102,8 @@ header {
     transition: 1s;
 }
 
-.top {
-    width: 440px;
+.top-header {
+    width: 40%;
 }
 
 .header-bg img {
@@ -142,6 +146,7 @@ header {
 }
 
 .hamburger-button {
+    background-color: transparent;
     display: none;
 }
 
@@ -169,7 +174,6 @@ header {
     transition: all 0.5s;
     text-transform: uppercase;
     -webkit-text-stroke: 4px #d6f4f4;
-    animation: name-anim 4s ease-out forwards;
 }
 
 .main-name:hover{
@@ -181,18 +185,6 @@ header {
       25px 25px 0px #f40468
 }
 
-@keyframes name-anim {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
 .carousel-container {
     display: flex;
     justify-content: center;
@@ -202,7 +194,6 @@ header {
     font-size: 1.5rem;
     overflow: hidden;
     height: 53px;
-    animation: name-anim 3s ease-out forwards;
 }
 
 .carousel {
@@ -549,6 +540,7 @@ header {
     letter-spacing: 5px;
     font-size: 2rem;
     font-family: var(--font-fam-secondary);
+    cursor: default;
 }
 
 .skills-container {
@@ -564,7 +556,6 @@ header {
 .skills-container img {
     width: 60px;
     height: 60px;
-    cursor: pointer;
     user-select: none;
     transition: 0.5s;
     filter: invert(80%);
@@ -590,8 +581,13 @@ header {
 }
 
 .skill p {
-    font-size: 1.5rem;
+    cursor: default;
+    font-size: 2rem;
     font-family: var(--font-fam-secondary);
+}
+
+.skill p span {
+    color: var(--text-color2);
 }
 
 
@@ -647,6 +643,11 @@ footer img:hover {
 /* Responsive */
 
 @media screen and (max-width: 665px) {
+
+    .top-header {
+        width: 35%;
+    }
+
     .header-bg {
         position: relative;
     }
@@ -681,7 +682,7 @@ footer img:hover {
     .hamburger-button[aria-expanded="true"] .top {
         transform: translateY(20px);
     }.hamburger-button[aria-expanded="true"] .bottom {
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     
     .hamburger-button[aria-expanded="true"] .top {
@@ -716,6 +717,18 @@ footer img:hover {
         height: 450%;
         padding: 10px;
     }
+
+    /* Skills */
+
+    .skill p {
+        font-size: 5rem;
+    }
+
+    /* Footer */
+
+    footer p {
+        font-size: 0.5rem;
+    }
 }
 
 /* 627 */
@@ -734,11 +747,11 @@ footer img:hover {
     }
 
     .about-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .about-content {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .about-content .social-icons img {
@@ -756,7 +769,6 @@ footer img:hover {
         justify-content: center;
         align-items: center;
         width: 100%;
-
     }
 
     .card-container {
@@ -766,8 +778,13 @@ footer img:hover {
         width: 100%;
     }
 
+    .card {
+        width: 200px;
+        height: 295px;
+    }
+
     .projects-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .card-title {
@@ -779,7 +796,7 @@ footer img:hover {
     }
 
     .skills-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .skills-container img {
@@ -787,12 +804,8 @@ footer img:hover {
         height: 60px;
     }
 
-    .skills {
-        font-size: 1rem;
-    }
-
     .skill p {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     footer {
@@ -800,16 +813,21 @@ footer img:hover {
     }
 
     footer p {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     footer a {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .footer-content .social-icons {
+        gap: 5px;
     }
 
     footer img {
-        width: 30px;
-        height: 30px;
+        gap: 0;
+        width: 20px;
+        height: 20px;
     }
     
 }
