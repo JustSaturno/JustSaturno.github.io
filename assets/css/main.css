@@ -726,8 +726,34 @@ footer img:hover {
 
     /* Footer */
 
+    footer {
+        padding: 20px;
+        height: fit-content;
+    }
+
     footer p {
-        font-size: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    footer a {
+        font-size: 1.5rem;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-content .social-icons {
+        gap: 5px;
+    }
+
+    footer img {
+        gap: 0;
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -806,28 +832,6 @@ footer img:hover {
 
     .skill p {
         font-size: 1.5rem;
-    }
-
-    footer {
-        padding: 20px;
-    }
-
-    footer p {
-        font-size: 0.8rem;
-    }
-
-    footer a {
-        font-size: 0.8rem;
-    }
-
-    .footer-content .social-icons {
-        gap: 5px;
-    }
-
-    footer img {
-        gap: 0;
-        width: 20px;
-        height: 20px;
     }
     
 }
