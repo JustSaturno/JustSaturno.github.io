@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/main.css">
+    <title></title>
+</head>
+<body>
+    <div class="logo">
+        <img src="Assets/Imgs/Screenshot_3-removebg-preview.png" alt="">
+        <p>A project by <a href="https://github.com/IgorHenriqueG" target="_blank">Igor Henrique</a></p>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="main-box">
+                <form id="bet-form">
+                    <label for="bet">Bet</label>
+                    <input type="number" id="bet" placeholder="Bet" min="10" value="10">
+
+                    <label for="rows">Rows</label>
+                    <input type="number" id="rows" placeholder="Rows" min="1" value="1" max="5">
+                </form>
+                <div class="bet-box">
+                    <div class="row">
+                        <div class="col" id="col-1">
+                            <img src="Assets/Imgs/emerald.png" alt="">
+                            <img src="Assets/Imgs/coin.png" alt="">
+                            <img src="Assets/Imgs/coin.png" alt="">
+                        </div>
+                        <div class="col" id="col-2">
+                            <img src="Assets/Imgs/diamond.png" alt="">
+                            <img src="Assets/Imgs/diamond.png" alt="">
+                            <img src="Assets/Imgs/coin.png" alt="">
+                        </div>
+                        <div class="col" id="col-3">
+                            <img src="Assets/Imgs/coin.png" alt="">
+                            <img src="Assets/Imgs/coin.png" alt="">
+                            <img src="Assets/Imgs/ruby.png" alt="">
+                        </div>
+                </div>
+                <button id="spin-btn" onclick="spin()">Spin</button>
+                <p class="alert hidden" style="color: red;">Not enoght money</p>
+            </div>
+            <div class="right-container">
+                <div class="money">
+                    <img src="Assets/Imgs/casino-chip.png" alt="">
+                    <p id="money">$<span id="balance">0.00</span></p>
+                </div>
+                <button id="deposit-btn" onclick="deposit()">Deposit</button>
+            </div>
+            
+        </div>
+    </main>
+</body>
+<script src="Assets/js/script.js"></script>
+</html>
