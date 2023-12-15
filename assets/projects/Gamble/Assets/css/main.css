@@ -109,27 +109,12 @@ main {
     border-right: 1px solid black;
 }
 
-.bet-box .col:nth-child(1) img:nth-child(1) {
-    border-radius: 10px 0 0 0px;
-}
-
-.bet-box .col:nth-child(1) img:nth-child(3) {
-    border-radius: 0 0px 0px 10px;
-}
-
-.bet-box .col:nth-child(3) img:nth-child(1) {
-    border-radius: 0 10px 0 0;
-}
-
-.bet-box .col:nth-child(3) img:nth-child(3) {
-    border-radius: 0 0 10px 0;
-}
-
 .row {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .col {
@@ -137,7 +122,6 @@ main {
     display: flex;
     flex-direction: column;
     height: 300px;
-    /* overflow: hidden; */
 }
 
 

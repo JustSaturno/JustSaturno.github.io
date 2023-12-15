@@ -54,8 +54,13 @@ function getRandomSymbol(){
     return symbols[index]
 }
 
+function isOverflown(element) {
+    return element.scrollHeight > element.clientHeight
+  }
+
 function spin(){
     const row = document.querySelector('.row')
+    const cols = document.querySelectorAll('.col')
     const balance = parseFloat(document.getElementById('balance').innerHTML)
     const bet = parseFloat(document.getElementById('bet').value)
 
@@ -86,9 +91,28 @@ function spin(){
             }
         }
 
-        const cols = document.querySelectorAll('.col')
-
-        cols.forEach(col => {
+        cols.forEach((col, index) => {
+            const random = Math.floor(Math.random() * 10)
+            const lastRandom = random * 100
+            col.setAttribute('style', `transform: translateY(-${lastRandom}%); transition: transform 1s ease-in-out;`)
         })
+
+        setTimeout(() => {
+            cols.forEach((col, index) => {
+
+                // if(isOverflown(col)){
+                //     const firstChild = col.children[0]
+                //     col.removeChild(firstChild)
+                //     const img = document.createElement('img')
+                //     const randomSymbol = getRandomSymbol()
+                //     img.src = `./Assets/imgs/${randomSymbol}.png`
+                //     img.classList.add('symbol')
+                //     col.appendChild(img)
+                // }
+
+
+            })
+        }, 1000)
+
     }
 }
