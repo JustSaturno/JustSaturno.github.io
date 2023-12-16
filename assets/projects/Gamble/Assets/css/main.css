@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Oswald&family=Roboto&family=Teko&display=swap');
 
+/* The CSS was poorly made. */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +25,6 @@ body {
 }
 
 a {
-    text-decoration: none;
     color: currentColor;
 }
 
@@ -56,7 +57,30 @@ main {
 
 .container {
     width: 90%;
-    height: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    width: 70%;
+    margin-top: 5px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 0 0 10px 10px;
+}
+
+.info p {
+    font-size: 1.3rem;
+    font-family: var(--font-subtitle);
 }
 
 .main-box {
@@ -66,7 +90,7 @@ main {
     align-items: center;
     justify-content: center;
     padding: 50px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     background-color: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -79,7 +103,7 @@ main {
     font-size: 1.5rem;
     text-align: center;
     line-height: 1.5;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     letter-spacing: 1px;
     word-spacing: 2px;
     text-transform: uppercase;
@@ -104,10 +128,15 @@ main {
     background-color: white;
 }
 
-.bet-box .col:not(:nth-child(2)) img {
+/* .bet-box .col:nth-child(2) {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+
+.bet-box .col:nth-child(4) {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+} */
 
 .row {
     display: flex;
@@ -259,4 +288,54 @@ main {
     100% {
         transform: translateY(-100%);
     }
+}
+
+.row {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 0 0 10px black;
+}
+
+.winlines {
+    position: absolute;
+    border-top: 5px solid gold;
+    border-bottom: 5px solid gold;
+    width: 100%;
+    height: 35%;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.prices {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prices img {
+    width: 50px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding: 20px;
 }

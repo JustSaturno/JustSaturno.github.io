@@ -24,11 +24,11 @@ const projectsData = [
         link: "assets/projects/Loja/app/index.html",
     },
     {
-        title: "PlaceHolder",
-        image: "assets/img/PH.png",
-        description: "",
-        date: "",
-        link: "",
+        title: "Gamble",
+        image: "assets/img/projects/Gamble_white.png",
+        description: "A simple slot machine using HTML, CSS & JS.",
+        date: "Created on 12/15/2023.<br>Last updated on 12/16/2023.",
+        link: "assets/projects/Gamble/index.html",
     },
     {
         title: "PlaceHolder",
