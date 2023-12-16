@@ -9,7 +9,7 @@
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -56,8 +56,8 @@ main {
 }
 
 .container {
-    width: 90%;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +109,7 @@ main {
     text-transform: uppercase;
     margin: 0 auto;
     width: 70%;
-    height: 50%;
+    height: fit-content;
 }
 
 .bet-box {
@@ -328,14 +328,91 @@ main {
 }
 
 footer {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; */
+    width: 100vw;
     text-align: center;
     font-size: 1.5rem;
     font-family: var(--font-heading);
     background-color: rgb(39, 39, 39);
     color: white;
     padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .logo img{
+        width: 70%;
+    }
+
+
+    .container {
+        width: 100vw;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 170%;
+    }
+
+    .right-container {
+        margin-left: 0;
+    }
+
+    .main-box {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bet-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80%;
+    }
+
+    #bet-form {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
+
+    .right-container {
+        position: absolute;
+        top: -230px;
+        right: 20px;
+        width: fit-content;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prices {
+        position: absolute;
+        top: 185px;
+        right: 10px;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .prices img {
+        width: 40px;
+    }
+
+    footer {
+        position: static;
+    }
+    
 }
