@@ -129,7 +129,7 @@ function spin(){
         for(let i = 0; i < ROWS; i++){
             for(let j = 0; j < COLS; j++){
                 const img = document.createElement('img')
-                img.src = `Assets/imgs/${symbols[i * COLS + j]}.png`
+                img.src = `../Assets/imgs/${symbols[i * COLS + j]}.png`
                 img.classList.add('symbol')
                 img.setAttribute('item-type', symbols[i * COLS + j])
                 row.children[i].appendChild(img)
