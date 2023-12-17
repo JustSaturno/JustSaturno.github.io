@@ -129,7 +129,7 @@ function spin(){
         for(let i = 0; i < ROWS; i++){
             for(let j = 0; j < COLS; j++){
                 const img = document.createElement('img')
-                img.src = `/assets/imgs/${symbols[i * COLS + j]}.png`
+                img.src = `assets/imgs/${symbols[i * COLS + j]}.png`
                 img.classList.add('symbol')
                 img.setAttribute('item-type', symbols[i * COLS + j])
                 row.children[i].appendChild(img)
@@ -147,11 +147,11 @@ function spin(){
                     img.setAttribute('draggable', 'false')
                     if(index > 100 && index < 102){
                         img.setAttribute('item-type', 'ruby')
-                        img.src = `./Assets/imgs/ruby.png`
+                        img.src = `assets/imgs/ruby.png`
                     }
                     if(index > 102){
                         img.setAttribute('item-type', 'ruby')
-                        img.src = `./Assets/imgs/ruby.png`
+                        img.src = `assets/imgs/ruby.png`
                     }
                 })
             }
