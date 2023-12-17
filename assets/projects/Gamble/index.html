@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/main.css">
+    <title></title>
+</head>
+<body>
+    <div class="logo">
+        <img src="Assets/Imgs/logo.png" draggable="false">
+        <p>A project by <a href="https://github.com/IgorHenriqueG" target="_blank">Igor Henrique</a></p>
+    </div>
+
+    <!-- The HTML was poorly made. -->
+
+    <main>
+        <div class="container">
+            <div class="main-box">
+                <form id="bet-form">
+                    <label for="bet">Bet: (min. $5)</label>
+                    <input type="number" id="bet" placeholder="Bet" min="5" value="5" >
+
+                    <!-- <label for="rows">Rows</label>
+                    <input type="number" id="rows" placeholder="Rows" min="1" value="1" max="5"> -->
+                </form>
+                <div class="bet-box">
+                    <div class="row">
+                        <div class="col" id="col-1">
+                            <img src="Assets/Imgs/emerald.png" class="symbol" draggable="false">
+                            <img src="Assets/Imgs/coin.png" class="symbol" draggable="false">
+                            <img src="Assets/Imgs/coin.png" class="symbol" draggable="false">
+                        </div>
+                        <div class="col" id="col-2">
+                                <img src="Assets/Imgs/diamond.png" class="symbol" draggable="false">
+                                <img src="Assets/Imgs/diamond.png" class="symbol" draggable="false">
+                                <img src="Assets/Imgs/coin.png" class="symbol" draggable="false">
+                            </div>
+                            <div class="col" id="col-3">
+                                <img src="Assets/Imgs/coin.png" class="symbol" draggable="false">
+                                <img src="Assets/Imgs/coin.png" class="symbol" draggable="false">
+                                <img src="Assets/Imgs/ruby.png" class="symbol" draggable="false">
+                            </div>
+                            <div class="winlines"></div>
+                    </div>
+                    <button id="spin-btn" onclick="spin()">Spin</button>
+                    <p class="alert hidden" style="color: red;">Not enoght money</p>
+                </div>
+                <div class="right-container">
+                    <div class="money">
+                        <img src="Assets/Imgs/casino-chip.png" draggable="false">
+                        <p id="money">$<span id="balance">0.00</span></p>
+                    </div>
+                    <button id="deposit-btn" onclick="deposit()">Deposit</button>
+                </div>
+                <div class="prices">
+                    <div class="price">
+                        <img src="Assets/Imgs/ruby.png" class="symbol" draggable="false">
+                        <p>x7</p>
+                    </div>
+                    <div class="price">
+                        <img src="Assets/Imgs/emerald.png" class="symbol" draggable="false">
+                        <p>x5</p>
+                    </div>
+                    <div class="price">
+                        <img src="Assets/Imgs/diamond.png" class="symbol" draggable="false">
+                        <p>x3</p>
+                    </div>
+                    <div class="price">
+                        <img src="Assets/Imgs/coin.png" class="symbol" draggable="false">
+                        <p>x2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <h2>Info</h2>
+                <div class="info-text">
+                    <p>This game is a simple version of the classic game "Roulette".</p>
+                    <p>It was created as a project for learning HTML, CSS and JavaScript.</p>
+                    <p>The first spin will be a win if the bet is $40 or less.</p>
+                    <p>Each symbol will be multiplied by his value, like the emerald, if you win it wil be your bet * the symbol value.</p>
+                </div>
+                
+            </div>
+        </div>
+        <footer>
+            <p>Icons from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+            <p>This project is only for educational purposes</p>
+        </footer>
+    </main>
+
+</body>
+<script src="Assets/js/script.js"></script>
+</html>
