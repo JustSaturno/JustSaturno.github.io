@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/mainImages/gem.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Gem Clicker</title>
+</head>
+<body>
+    <main>
+
+        <!-- Dialog -->
+
+        <div class="dialog-container">
+            <img src="assets/mainImages/miner.png" alt="dialog" class="dialog-image">
+            <div class="text-container">
+                <h2 class="name">?????</h2>
+                <p class="dialog"></p>
+                <button class="dialog-btn" onclick="dialogShow(true)">&#10141;</button>
+                <div class="decision">
+                    <button class="yes-btn">Yes</button>
+                    <button class="no-btn">No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gems -->
+
+        <div class="gem-container">
+            <h1 class="gem-count">Gems: <span>0</span></h1>
+            <p class="click-count">Clicks: <span>0</span></p>
+            <img src="assets/mainImages/arrow-down.svg" class="orange-arrow">
+            <img src="assets/mainImages/gem.png" alt="gem" class="gem" id="gem" draggable="false">
+            <p class="dialog"></p>
+        </div>
+
+        <!-- Upgrades and Skills -->
+
+        <div class="all-container">
+            <div class="cystals-container">
+                <img src="assets/mainImages/arrow-down.svg" class="orange-arrow">
+                <img src="assets/mainImages/crystal.png" draggable="false">
+                <p class="crystal-count">5</p>
+            </div>
+            
+            <div class="us-container">
+                <div class="us-btns">
+                    <div>
+                        <img src="assets/mainImages/arrow-down.svg" class="orange-arrow" style="left: 30px;">
+                        <button class="us-btn" onclick="displayUS(this)">Upgrades</button>
+                    </div>
+                    
+                    <div>
+                        <img src="assets/mainImages/arrow-down.svg" class="orange-arrow" style="left: 30px;">
+                        <button class="us-btn" onclick="displayUS(this)">Skills</button>
+                    </div>
+                    
+                    
+                </div>
+                <div class="us-display">
+                    <div class="ovf">
+                        <div class="upgrades">
+                        
+                            <div class="upgrades-list active">
+                                <h2>Upgrades</h2>
+                                <div>
+                                    <img src="assets/upgrades/Multiplier.png" draggable="false">
+                                    <p>Multiplier</p>
+                                    <p class="item-amount">x1</p>
+                                    <button class="upgrade-btn" item-type="upgrade" item="multiplier"><span class="btn-price">100</span> gems</button>
+                                </div>
+            
+                                <div>
+                                    <img src="assets/upgrades/pickaxe.png" draggable="false">
+                                    <p>Pickaxe</p>
+                                    <p class="item-amount">x1</p>
+                                    <button class="upgrade-btn" item-type="upgrade" item="pickaxe"><span class="btn-price">50</span> gems</button>
+                                </div>
+    
+                                <div>
+                                    <img src="assets/upgrades/mine.png" draggable="false">
+                                    <p>Mine</p>
+                                    <p class="item-amount">x1</p>
+                                    <button class="upgrade-btn" item-type="upgrade" item="mine"><span class="btn-price">150</span> gems</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div class="skills-list">
+                                <h2>Skills</h2>
+                                <div>
+                                    <img src="assets/skills/goldpickaxe.png" draggable="false">
+                                    <p>Speed</p>
+                                    <p class="item-amount">x5</p>
+                                    <button class="skill-btn" item-type="skill" item="goldpickaxe"><span class="btn-price">5</span> crystals</button>
+                                </div>
+    
+                                <div>
+                                    <img src="assets/skills/potion.png" draggable="false">
+                                    <p>Potion</p>
+                                    <p class="item-amount">x6</p>
+                                    <button class="skill-btn" item-type="skill" item="potion"><span class="btn-price">10</span> crystals</button>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Oswald&family=Roboto&family=Teko&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('assets/mainImages/mouse.png'), auto;
+}
+
+:root {
+    --bg-color: #222;
+    --bg-color2: #1a1a1a;
+
+    --white: #ffffff;
+    --black: #000000;
+    --purple: #9b59b6;
+    --purple2: #783894;
+    --orange: #e67e22;
+    --green: #2ecc71;
+    --red: #e74c3c;
+
+    --font-heading: 'Teko', sans-serif;
+} 
+
+body {
+    background-color: var(--bg-color2);
+    color: var(--white);
+    font-family: var(--font-heading);
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Global */
+
+button {
+    background-color: var(--purple);
+}
+
+button:hover {
+    background-color: var(--purple2);
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Gem */
+
+.gem-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gem-count {
+    font-size: 3rem;
+    color: var(--purple);
+}
+
+.gem-count span {
+    color: var(--white);
+}
+
+.click-count {
+    transform: translateY(-20px);
+    font-size: 1.5rem;
+    color: var(--purple);
+}
+
+.click-count span {
+    color: var(--white);
+}
+
+.gem {
+    width: 80%;
+    height: 7%;
+    /* cursor: url('assets/mainImages/clicker-white.png'), pointer; */
+    transition: 0.4s;
+}
+
+/* Upgrade & Skills */
+
+.us-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    width: 295px;
+    height: fit-content;
+    padding: 10px;
+    background-color: var(--bg-color);
+
+    transition: 0.4s;
+    /* overflow: hidden; */
+}
+
+.us-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.us-btn {
+    width: 100px;
+    height: 30px;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: url('assets/mainImages/mousePointer.png'), pointer;
+    transition: 0.4s;
+}
+
+.us-display {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 50px;
+    transform: translateX(0%);
+    overflow: hidden;
+    
+    transition: 0.5s;
+}
+
+.ovf {
+    display: flex;
+    gap: 50px;
+    width: fit-content;
+    transition: 0.4s;
+}
+
+.ovf.active {
+    transform: translateX(-55%);
+}
+
+
+
+.upgrades-list, .skills-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.upgrades-list div, .skills-list div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.upgrades-list img, .skills-list img {
+    width: 40px;
+    height: 40px;
+    transition: 0.4s;
+}
+
+.upgrades-list p, .skills-list p {
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+.upgrade-btn, .skill-btn {
+    width: 110px;
+    font-size: 0.8rem;
+
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: url('assets/mainImages/mousePointer.png'), pointer;
+    transition: 0.4s;
+    padding: 10px;
+}
+
+.upgrade-btn span, .skill-btn span {
+    cursor: url('assets/mainImages/mousePointer.png'), pointer;
+}
+
+.cystals-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.cystals-container img {
+    width: 45px;
+}
+
+/* Dialog */
+
+.dialog-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 101;
+
+    align-items: flex-end;
+    display: none;
+}.dialog-container.active {
+    display: flex;
+    pointer-events: none;
+}
+
+.dialog-container img {
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+}
+
+.text-container {
+    user-select: none;
+    position: relative;
+    width: 490px;
+    background-color: var(--white);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--black);
+    font-size: 1.5rem;
+    gap: 10px;
+
+    transition: 0.5s;
+    margin-bottom: 80px;
+    margin-left: 250px;
+    z-index: 102;
+}
+
+.text-container .name {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    font-size: 2rem;
+    background-color: var(--purple2);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.text-container p {
+    text-align: center;
+    width: 400px;
+    height: 100%;
+    min-height: 70px;
+    padding: 20px;
+    z-index: 102;
+}
+
+.dialog-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    z-index: 102;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--orange);
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: url('assets/mainImages/mousePointer.png'), pointer;
+}
+
+.decision {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.decision button {
+    width: 100px;
+    height: 30px;
+    color: var(--white);
+    border: none;
+    font-size: 1rem;
+    /* border-radius: 5px; */
+    cursor: url('assets/mainImages/mousePointer.png'), pointer;
+}
+
+.decision button.yes-btn {
+    background-color: var(--green);
+}.decision button.no-btn {
+    background-color: var(--red);
+}
+
+.decision button:hover {
+    color: var(--black);
+    filter:contrast(150%);
+}
+
+/* Tutorial arrow */
+
+.orange-arrow {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    z-index: 100;
+    pointer-events: none;
+
+    animation: tutorialArrow 1.5s ease-in-out infinite;
+}
+
+@keyframes tutorialArrow {
+    0% {
+        top: -70px;
+    }
+    50% {
+        top: -85px;
+    }
+    100% {
+        top: -70px;
+    }    
+}
