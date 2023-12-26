@@ -329,3 +329,28 @@ main {
         top: -70px;
     }    
 }
+
+/* Responsive */
+
+.responsive-message {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .responsive-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+
+        font-size: 1.5rem;
+    }
+
+    .dialog-container {
+        display: none;
+    }
+    main {
+        display: none;
+    }
+}

@@ -16,6 +16,10 @@ function soundvolume() {
 
 soundvolume()
 
+if(window.innerWidth < 600) {
+    firstClick = false
+}
+
 document.querySelector('body').addEventListener('click', () => {
     if(firstClick) {
         firstClick = false
@@ -23,6 +27,8 @@ document.querySelector('body').addEventListener('click', () => {
         dialogAppear()
     }
 })
+
+
 
 document.querySelectorAll('.orange-arrow').forEach((arrow, index) => {
     arrow.parentElement.style = 'position: relative'

@@ -31,11 +31,11 @@ const projectsData = [
         link: "assets/projects/Gamble/index.html",
     },
     {
-        title: "PlaceHolder",
-        image: "assets/img/PH.png",
-        description: "",
-        date: "",
-        link: "",
+        title: "Gem Clicker",
+        image: "assets/img/projects/Clicker.png",
+        description: "A simple gem clicker game using HTML, CSS & JS.",
+        date: "Created on 12/22/2023.<br>Last updated on 12/25/2023.",
+        link: "assets/projects/Clicker/index.html",
     },
     {
         title: "PlaceHolder",
