@@ -10,7 +10,7 @@ const projectsData = [
         link: "assets/projects/Calculator/index.html",
     },
     {
-        title: "Wavetapper",
+        title: "Wavetapper <span style='color: red'>[WIP]</span>",
         image: "assets/img/projects/Wavetapper.png",
         description: "A synchronized music animation using CSS & JS.",
         date: "Created on 11/17/2023.<br>Last updated on 11/29/2023.",
@@ -31,7 +31,7 @@ const projectsData = [
         link: "assets/projects/Gamble/index.html",
     },
     {
-        title: "Gem Clicker",
+        title: "Gem Clicker <span style='color: red'>[WIP]</span>",
         image: "assets/img/projects/Clicker.png",
         description: "A simple gem clicker game using HTML, CSS & JS.",
         date: "Created on 12/22/2023.<br>Last updated on 12/25/2023.",

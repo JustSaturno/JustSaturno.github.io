@@ -284,7 +284,7 @@ function skill(item, price, btn, upgradeAmount) {
             break
         case 'potion':
             let interval2 = setInterval(autoClick, 50, true)
-            setTimeout(clearInterval, 50000, interval2)
+            setTimeout(clearInterval, 30000, interval2)
             break
         default:
             break
