@@ -10,13 +10,6 @@ const projectsData = [
         link: "assets/projects/Calculator/index.html",
     },
     {
-        title: "Wavetapper <span style='color: red'>[WIP]</span>",
-        image: "assets/img/projects/Wavetapper.png",
-        description: "A synchronized music animation using CSS & JS.",
-        date: "Created on 11/17/2023.<br>Last updated on 11/29/2023.",
-        link: "",
-    },
-    {
         title: "Game Store",
         image: "assets/img/projects/MAG.png",
         description: "A simple game store using HTML, CSS & JS.",
@@ -31,19 +24,12 @@ const projectsData = [
         link: "assets/projects/Gamble/index.html",
     },
     {
-        title: "Gem Clicker <span style='color: red'>[WIP]</span>",
+        title: "Gem Clicker <span style='color: cyan'>[WIP]</span>",
         image: "assets/img/projects/Clicker.png",
         description: "A simple gem clicker game using HTML, CSS & JS.",
         date: "Created on 12/22/2023.<br>Last updated on 12/25/2023.",
         link: "assets/projects/Clicker/index.html",
     },
-    {
-        title: "PlaceHolder",
-        image: "assets/img/PH.png",
-        description: "",
-        date: "",
-        link: "",
-    }
 ]
 
 projectsData.forEach((project) => {
@@ -59,67 +45,19 @@ projectsData.forEach((project) => {
         
     })
 
-    // div.addEventListener('mousemove', (event) => {
-    //     let mouseX = event.clientX
-    //     let mouseY = event.clientY
-
-    //     let cardX = div.getBoundingClientRect().x
-    //     let cardY = div.getBoundingClientRect().y
-
-    //     let cardWidth = div.getBoundingClientRect().width
-    //     let cardHeight = div.getBoundingClientRect().height
-
-    //     let cardCenterX = cardX + (cardWidth / 2)
-    //     let cardCenterY = cardY + (cardHeight / 2)
-
-    //     let cardCenterXOffset = cardCenterX - mouseX
-    //     let cardCenterYOffset = cardCenterY - mouseY
-
-    //     let cardCenterXOffsetPercent = (cardCenterXOffset / cardWidth) * 100
-
-    //     let cardCenterYOffsetPercent = (cardCenterYOffset / cardHeight) * 100
-
-    //     div.style.transform = `rotateX(${cardCenterYOffsetPercent * -0.4}deg) rotateY(${cardCenterXOffsetPercent * 0.4}deg)`
-
-    //     div.style.transition = "all 0.1s ease"
-    // })
-
-    // div.addEventListener('mouseleave', () => {
-    //     setTimeout(() => {
-    //     div.style.transform = `rotateX(0deg) rotateY(0deg)`
-    //     div.style.transition = "all 1s ease"
-    //     }, 500)
-    // })
-
-    if(project.title === "PlaceHolder" || project.description === ""){
-        div.innerHTML = `
-            <div class="card-title"">
-                <h2>${project.title}</h2>
-            </div>
-            <div class="card-image" style="filter: invert(100%)">
-                <img src="${project.image}" alt="">
-            </div>
-            <div class="card-description">
-            <p>${project.description}</p>
-            <br>
-            <p class="date">undefined</p>
-        </div>
+    div.innerHTML = `
+    <div class="card-title">
+        <h2>${project.title}</h2>
+    </div>
+    <div class="card-image">
+        <img src="${project.image}" alt="">
+    </div>
+    <div class="card-description">
+        <p>${project.description}</p>
+        <br>
+        <p class="date">${project.date}</p>
+    </div>
     `
-    }else{
-        div.innerHTML = `
-        <div class="card-title">
-            <h2>${project.title}</h2>
-        </div>
-        <div class="card-image">
-            <img src="${project.image}" alt="">
-        </div>
-        <div class="card-description">
-            <p>${project.description}</p>
-            <br>
-            <p class="date">${project.date}</p>
-        </div>
-    `
-    }
 
     cardContainer.appendChild(div)
 })

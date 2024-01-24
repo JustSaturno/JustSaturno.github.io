@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFF;
+    --black: #000;
+
+    --primary: #ff0000;
+    --secondary: #aa1748;
+    --tertiary: #1a8046;
+    --quaternary: #104e2b;
+    
+
+    --background: #181818;
+    --background02: #3d3d3d96;
+
+    --ff-bebas: 'Bebas Neue', cursive;
+    --ff-teko: 'Teko', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: var(--background);
+    font-family: var(--ff-teko);
+}
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    color: var(--white);
+
+    padding: 1rem 2rem;
+
+    background: var(--background02);
+
+    gap: 1rem;
+
+    font-family: var(--ff-bebas);
+}
+
+header img {
+    width: 50px;
+    height: 80px;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}

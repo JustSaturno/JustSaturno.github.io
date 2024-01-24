@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFF;
+    --black: #000;
+
+    --bg-01: #181818;
+    --bg-02: #202020;
+
+    --fc-01: #b9b9b9;
+
+    --ff-01: 'Oswald', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+body {
+    background-color: var(--bg-01);
+    color: var(--white);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2vh;
+    overflow-x: hidden;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1rem;
+
+    color: var(--fc-01);
+}
+
+.title img {
+    width: 90%;
+    filter: invert(100%);
+}
+
+.main-container {
+    width: 70%;
+    height: 70%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+    box-shadow: 0 0 8px 0px var(--black);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-02);
+
+    margin-bottom: 20px;
+}
+
+.info {
+    width: 100%;
+    height: min-content;
+
+    border-radius: 15px;
+    box-shadow: 0 0 8px 0px var(--black);
+
+    background-color: var(--bg-01);
+    font-family: var(--ff-01);
+}
+
+.info h2 {
+    padding: 10px 0px 0px 10px;
+}
+
+.info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 0px 25px 25px;
+
+    text-transform: uppercase;
+}
