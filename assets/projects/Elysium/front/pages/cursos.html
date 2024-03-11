@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+    <title>Elysium - Cursos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-search">
+            <a href="../index.html">
+                <div class="logo">
+                    <img src="../img/Logo.png" alt="Logo" width="50px">
+                    <h1>Elysium</h1>
+                </div>
+            </a>
+
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+        
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a onclick="openDialog()">Contato</a></li>
+                <li><button class="sharp-button" onclick="openDialog('matricula')">Matricule-se</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dialog contactDialog hidden">
+        <div class="dialog-content">
+            <i class="bi bi-x-lg exit-dialog" onclick="closeDialog('contact')"></i>
+            <h1>Contato</h1>
+            <form>
+                <div>
+                    <label>Nome</label>
+                    <input type="text" placeholder="Nome" required>
+                </div>
+                
+                <div>
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <div>
+                    <label>Assunto</label>
+                    <input type="text" placeholder="Assunto" required>
+                </div>
+
+                <div>
+                    <label>Mensagem</label>
+                    <textarea placeholder="Mensagem" rows="5" cols="30" required></textarea>
+                </div>
+                <button class="sharp-button">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="dialog matriculaDialog hidden">
+        <div class="dialog-content">
+            <i class="bi bi-x-lg exit-dialog" onclick="closeDialog('matricula')"></i>
+            <h1>matricula</h1>
+            <form>
+                <div>
+                    <label>Nome</label>
+                    <input type="text" placeholder="Nome" required>
+                </div>
+                
+                <div>
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <div>
+                    <label>Curso</label>
+                    <select required>
+                        <option value="">Selecione</option>
+                        <option value="">Front-End - R$1999,90</option>
+                        <option value="">Back-End - R$6999,90</option>
+                        <option value="">Mobile - R$9,90</option>
+                        <option value="">UX & UI - R$24,90</option>
+                        <option value="">Data Science - R$98,90</option>
+                        <option value="">DevOps - R$15,90</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Forma de Pagamento</label>
+                    <select required>
+                        <option value="">Selecione</option>
+                        <option value="">Boleto</option>
+                        <option value="">Cartão de Credito</option>
+                        <option value="">Cartão de Debito</option>
+                        <option value="">Pix</option>
+                    </select>
+                    
+                </div>
+                <button class="sharp-button">Matricular-se</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <div class="courses-container">
+            <div class="course">
+                <div class="course-bg"></div>
+                <div class="course-title">
+                    <div style="--this-color: var(--blue-600);">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    <h2>Front-End</h2>
+                </div>
+                <p>Desenvolva experiências web incríveis com HTML, CSS e JavaScript, além de se aprofundar nos principais frameworks do mercado, como React, Angular e Vue.JS. Domine JavaScript a fundo, para não depender de copiar e colar.</p>
+                <button>Saiba mais</button>
+            </div>
+
+            <div class="course">
+                <div class="course-bg"></div>
+                <div class="course-title">
+                    <div style="--this-color: var(--green-500);">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h2>Back-End</h2>
+                </div>
+                
+                <p>Desenvolva APIs e aplicativos web completos, com foco em APIs REST e GraphQL.</p>
+                <button>Saiba mais</button>
+            </div>
+
+            <div class="course">
+                <div class="course-bg"></div>
+                <div class="course-title">
+                    <div style="--this-color: var(--danger-500);">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    
+                    <h2>Mobile</h2>
+                </div>
+                <p>Desenvolva aplicativos móveis para as principais plataformas, smartphones e tablets. Aqui, você vai construir para ambientes nativos, como Android ou iOS, e entregar apps incríveis, utilizando frameworks híbridos e multiplataforma, como Flutter e React Native.</p>
+                <button>Saiba mais</button>
+            </div>
+
+            <div class="course">
+                <div class="course-bg"></div>
+                <div class="course-title">
+                    <div style="--this-color: var(--purple-600);">
+                        <i class="bi bi-border-outer"></i>
+                    </div>
+                    <h2>UX & UI</h2>
+                </div>
+                
+                <p>O universo de UX & Design é gigante. Crie diferentes layouts para plataformas digitais. Edite vídeos e desenvolva animações. Construa e expanda o seu conhecimento nas principais tendências do mercado. Conheça as principais ferramentas gráficas, como o Adobe Photoshop, Adobe Illustrator, Figma, Final Cut e outras!</p>
+                <button>Saiba mais</button>
+            </div>
+
+            <div class="course">
+                <div class="course-bg"></div>
+                <div class="course-title">
+                    <div style="--this-color: var(--orange);">
+                        <i class="bi bi-bar-chart-line-fill"></i>
+                    </div>
+                    <h2>Data Science</h2>
+                </div>
+                <p>Domine Python, R e SQL. Crie e alinhe dados, transforme-os em insights e modelize as informações. Construa APIs e aplicativos web com Python, Flask e Django.</p>
+                <button>Saiba mais</button>
+            </div>
+
+            <div class="course">
+                <div class="course-bg"></div>
+                <div class="course-title">
+                    <div style="--this-color: var(--success-500);">
+                        <i class="bi bi-gear-fill"></i>
+                    </div>
+                    <h2>DevOps</h2>
+                </div>
+
+                <p>Conheça o movimento que preza pela automação e monitoramento das construções de softwares. Explore a Internet das Coisas, desenvolva infraestruturas completas e crie um pipeline de construção de software. Tudo isso com a ajuda de ferramentas poderosas, como o Terraform e o Kubernetes.</p>
+                <button>Saiba mais</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="logo">
+                <img src="../img/Logo.png" alt="Logo" draggable="false">
+                <h1>Elysium</h1>
+            </div>
+
+            <div class="copyright">
+                <p>Copyright © 2022-2024 Elysium. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="social">
+                <p>Siga-nos em nossas redes</p>
+
+                <div class="social-icons">
+                    <div class="instagram">
+                        <a href="https://www.instagram.com/just.saturno/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+    
+                    <div class="github">
+                        <a href="https://github.com/Igorhenriqueg" target="_blank"><i class="bi bi-github"></i></a>
+                    </div>
+    
+                    <!-- <div class="twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </div>
+    
+                    <div class="telegram">
+                        <i class="bi bi-telegram"></i>       
+                    </div> -->
+                </div>
+        </div>
+    </footer>
+</body>
+<script src="../script.js"></script>
+</html>

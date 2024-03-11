@@ -30,6 +30,13 @@ const projectsData = [
         date: "Created on 12/22/2023.<br>Last updated on 12/25/2023.",
         link: "assets/projects/Clicker/index.html",
     },
+    {
+        title: "Elysium",
+        image: "assets/img/projects/Elysium.png",
+        description: "Front-End school project.",
+        date: "Created on 04/03/2024.<br>Last updated on 11/03/2024.",
+        link: "assets/projects/Elysium/front/index.html",
+    }
 ]
 
 projectsData.forEach((project) => {
