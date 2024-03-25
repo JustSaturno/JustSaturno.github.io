@@ -7,35 +7,42 @@ const projectsData = [
         image: "assets/img/projects/Calculator.png",
         description: "A simple functional calculator.",
         date: "Created on 11/17/2023.<br>Last updated on 11/17/2023.",
-        link: "assets/projects/Calculator/index.html",
+        link: "assets/projects/Calculator/index.html"
     },
     {
         title: "Game Store",
         image: "assets/img/projects/MAG.png",
         description: "A simple game store using HTML, CSS & JS.",
         date: "Created on 11/01/2023.<br>Last updated on 12/09/2023.",
-        link: "assets/projects/Loja/app/index.html",
+        link: "assets/projects/Loja/app/index.html"
     },
     {
         title: "Gamble",
         image: "assets/img/projects/Gamble_white.png",
         description: "A simple slot machine using HTML, CSS & JS.",
         date: "Created on 12/15/2023.<br>Last updated on 12/16/2023.",
-        link: "assets/projects/Gamble/index.html",
+        link: "assets/projects/Gamble/index.html"
     },
     {
-        title: "Gem Clicker <span style='color: cyan'>[WIP]</span>",
+        title: "Gem Clicker",
         image: "assets/img/projects/Clicker.png",
         description: "A simple gem clicker game using HTML, CSS & JS.",
         date: "Created on 12/22/2023.<br>Last updated on 12/25/2023.",
-        link: "assets/projects/Clicker/index.html",
+        link: "assets/projects/Clicker/index.html"
     },
     {
         title: "Elysium",
         image: "assets/img/projects/Elysium.png",
         description: "Front-End school project.",
         date: "Created on 04/03/2024.<br>Last updated on 11/03/2024.",
-        link: "assets/projects/Elysium/front/index.html",
+        link: "assets/projects/Elysium/front/index.html"
+    },
+    {
+        title: "Task Manager",
+        image: "assets/img/projects/MAG-Task.svg",
+        description: "Front-End Home, Login & Register page.",
+        date: "Created on 11/03/2024.<br>Last updated on 25/03/2024.",
+        link: "assets/projects/MAG-Task/index.html"
     }
 ]
 

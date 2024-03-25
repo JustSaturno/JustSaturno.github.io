@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="../js/card.js" defer></script>
+    <title>Card</title>
+</head>
+<body>
+
+    <div class="card">
+        <img src="../imgs/funcionario.jpg" draggable="false">
+
+        <div class="infos">
+            <div class="div-infos">
+                <p class="name">
+                    Motorista
+                </p>
+
+                <div class="div-email">
+                    <i class="bi bi-envelope-at-fill"></i> 
+                    <p class="email">@mag.com.br</p>
+                </div>
+
+                <div class="status-tasks">
+                    <i class="bi bi-check2-circle"></i>
+                    <p>8</p>
+                </div>
+                <div class="status-tasks">
+                    <i class="bi bi-arrow-clockwise"></i>
+                    <p>3</p>
+                </div>
+                <div class="status-tasks">
+                    <i class="bi bi-clock-history"></i>
+                    <p>22</p>
+                </div>
+            </div>
+
+            <div class="div-tasks">
+                <i class="bi bi-caret-down-fill"></i>
+
+                <i class="bi bi-plus"></i>
+            </div>
+
+            <div class="div-remove-edit">
+                <button onclick="delete(this)" class="limpar ">
+                    <img src="../imgs/remove.png" draggable="false">
+                </button>
+
+                <button onclick="edit(this)" class="edit">
+                    <img src="../imgs/edit.png" draggable="false">    
+                </button>
+
+                <button onclick="confirm(this)" class="oculto confirm" >
+                    <img src="../imgs/confirm.png" draggable="false">    
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Homenaje&family=Medula+One&family=Rationale&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: rgb(30, 30, 30);
+    --black-2: rgb(40, 40, 40);
+    --black-3: rgb(0, 0, 0);
+
+    --white: rgb(255, 255, 255);
+
+    --gray: rgb(180, 180, 180);
+    --gray-2: rgb(60, 60, 60);
+
+    --font: "Rationale", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--black-2);
+    font-family: var(--font);
+}
+
+.card {
+    position: relative;
+    width: 700px;
+    height: 300px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+
+    border-radius: 5px;
+
+    color: var(--white);
+    background-color: var(--black);
+
+    z-index: 1;
+}
+
+.card::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    border-radius: 5px;
+    background-color: var(--gray-2);
+    z-index: -1;
+
+    transition: 1.2s;
+}
+
+.card:hover::before {
+    width: 100%;
+}
+
+.card > img {
+    width: 200px;
+    height: 100%;
+
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+.infos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 490px;
+    height: 100%;
+    padding: 20px;
+}
+
+.div-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.name {
+    font-size: 35px;
+    text-transform: uppercase;
+    max-width:max-content;
+    word-wrap: break-word;
+}
+
+.div-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 27px;
+}
+
+.div-email p {
+    font-size: 20px;
+    color: var(--gray);
+    text-decoration: underline;
+}
+
+.status-tasks {
+    display: flex;
+    gap: 20px;
+
+    font-size: 17px;
+}
+
+.status-tasks p {
+    color: var(--gray);
+}
+
+.div-tasks{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.div-tasks i {
+    font-size: 30px;
+    color: var(--white);
+
+    cursor: pointer;
+    opacity: .6;
+
+    transition: .3s ease-in-out;
+}
+
+.div-tasks i:hover {
+    opacity: 1;
+}
+
+.div-remove-edit {
+    position: absolute;
+    top: -37px;
+    right: -37px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.div-remove-edit button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background-color: transparent;
+
+    transition: .4s;
+    cursor: pointer;
+}
+
+.div-remove-edit img {
+    width: 100%;
+}
+
+.div-remove-edit button:hover {
+    transform: scale(1.1);
+}
+.div-remove-edit button:active {
+    transform: scale(.9);
+}
+
+.oculto{
+    display: none;
+}
