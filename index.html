@@ -8,8 +8,7 @@
     <link rel="icon" type="image/x-icon" href="assets/img/logoIcon1.svg">
     <title>Igor Henrique - Portfolio</title>
 </head>
-<body>
-
+<body onload="loadScreen()">
     <div class="loader-main" id="loader">
         <div class="loader">
             <svg viewBox="0 0 86 80">
@@ -187,12 +186,9 @@
 <script src="assets/js/projects.js"></script>
 
 <script>
-    document.onreadystatechange = function() {
-      if (document.readyState === "complete") {
-        document.querySelector("body").style.visibility = "hidden";
+
+    function loadScreen() {
         document.querySelector("body").style.overflow = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
-      } else {
         setTimeout(() => {
           document.querySelector("#loader").classList.add('fadeOut');  
           setTimeout(() => {
@@ -201,7 +197,23 @@
           document.querySelector("body").style.visibility = "visible";
           document.querySelector("body").style.overflowY = "visible";
         }, 1000);
-      }
-    };
+    }
+
+    // document.onreadystatechange = function() {
+    //   if (document.readyState == "complete") {
+    //     document.querySelector("body").style.visibility = "hidden";
+    //     document.querySelector("body").style.overflow = "hidden";
+    //     document.querySelector("#loader").style.visibility = "visible";
+    //   } else {
+    //     setTimeout(() => {
+    //       document.querySelector("#loader").classList.add('fadeOut');  
+    //       setTimeout(() => {
+    //         document.querySelector("#loader").style.display = "none";
+    //       }, 800);
+    //       document.querySelector("body").style.visibility = "visible";
+    //       document.querySelector("body").style.overflowY = "visible";
+    //     }, 1000);
+    //   }
+    // };
   </script>  
 </html>
