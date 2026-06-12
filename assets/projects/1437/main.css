@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {  
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.italic {
+    font-style: italic;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from, to {
+    transform: scale(0);
+  }
+  
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.magic {
+  display: inline-block;
+  position: relative;
+}
+
+.magic > .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+  
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+.magic > .magic-star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+.magic > .magic-star > svg > path {
+  fill: var(--violet);
+}
+
+.magic > .magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+body {
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Splash */
+
+.splash {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.splash input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 1rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.splash button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 8rem;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.hero h1 span {
+    animation: fillAnimation 1s ease-in-out forwards;
+}
+
+.hero h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero h1 span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero h1 span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.hero h1 span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.hero h1 span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.hero h1 span:nth-child(6) {
+    animation-delay: 1s;
+}
+
+@keyframes fillAnimation {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.hero .images img {
+    position: absolute;
+    width: 10%;
+    filter: blur(2px);
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.hero .images img:nth-child(1) {
+    left: 0;
+    top: 0;
+    transform: translate(50%, 50%);
+}
+
+.hero .images img:nth-child(2) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero .images img:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+}
+
+
+.letter {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-items: center; */
+    font-size: 1.3rem;
+    line-height: 1.8;
+    /* gap: 500px; */
+}
+
+
+.letter .title {
+    font-size: 4rem;
+    text-align: center;
+    scale: 0;
+    margin-bottom: 50vh;
+}
+
+.letter .title span {
+    color: red;
+}
+
+/* .letter .content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+} */
+
+.letter .chapter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.letter .text {
+    width: min-content;
+    /* display: inline-block; */
+    font-size: 2rem;
+    margin-bottom: 100vh;
+}
+
